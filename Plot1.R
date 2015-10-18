@@ -1,0 +1,6 @@
+NEI <- readRDS("summarySCC_PM25.rds")
+SCC <- readRDS("Source_Classification_Code.rds")
+poltotals <- aggregate(Emissions~year, data = NEI, sum)
+png(filename = "plot1.png")
+  plot(poltotals$year, poltotals$Emissions, type = "l", col = "blue", main = "United States PM25 Emission trend", xlab = "Year", ylab = "Total PM25 Emissions")
+dev.off()
